@@ -88,7 +88,7 @@
 
 
 <div id="intro" class="screen">
-<div class="wrap"><div class="tulip">🌷</div><div class="ey">08 October • made only for you</div><h1 class="title">Tuli</h1><p class="copy">A little birthday world made from flowers, distance, and all the tiny things I love about you.</p><button class="btn" id="enter">Tap to Enter →</button></div>
+<div class="wrap"><div class="tulip">🌷</div><div class="ey">08 October • made only for Tuli</div><h1 class="title">Tuli</h1><p class="copy">A little birthday world made from flowers, distance, and all the tiny things I love about you.</p><button class="btn" id="enter">Tap to Enter →</button></div>
 </div>
 
 <div id="arrowScene" class="screen hidden">
@@ -101,11 +101,11 @@
 <div class="wrap"><div class="ey">The heart popped…</div><h2 class="title">Something sweet was hiding here.</h2>
 <div class="cakeStage" id="cakeStage"><div class="cake" id="cake">🎂<div class="cakeWords">Happy Birthday<br>Tuli</div></div><div class="knife" id="knife">🔪</div></div>
 <p class="copy">Slide all the way across to cut the cake.</p><input id="cut" class="aim" type="range" min="0" max="100" value="0">
-<div id="cakeReveal" class="reveal"><h2 class="title">Happy Birthday, Tuli! 🌷</h2><p class="copy">The cake is cut. 🌷 Five balloons are waiting — and each balloon already contains one of your photos.</p><button class="btn" id="goPhotos">See your photo balloons ↓</button></div></div>
+<div id="cakeReveal" class="reveal"><h2 class="title">Happy Birthday, Tuli! 🌷</h2><p class="copy">The cake is cut. 🌷 pics are waiting — and eachone already contains one of your photos.</p><button class="btn" id="goPhotos">See your photo balloons ↓</button></div></div>
 </div>
 
 <section id="photos" class="hidden">
-<div class="center"><div class="ey">One by one</div><h2 class="title">Five little surprises.</h2><p class="lead">Each balloon hides one photo. Pop them in order — the photo and its letter will appear, then the next balloon will come down.</p></div>
+<div class="center"><div class="ey">One by one</div><h2 class="title"> little surprises.</h2><p class="lead">Eacchone photo. Pop them in order — the photo and its letter will appear, then the next balloon will come down.</p></div>
 <div class="rows" id="rows"></div>
 </section>
 
@@ -114,17 +114,17 @@
 <section class="section"><div class="center"><div class="ey">Your little language</div><h2 class="title">Dhupush. Tush. You.</h2><p class="lead">A fall becomes “dhupush”, a hit becomes “tush”. Your tiny made-up sounds are silly, adorable, and completely yours — and that is exactly why I love them.</p></div></section>
 
 <div id="garden">
-<div class="gardenContent"><div class="tulip">🌷 <span>🪷</span></div><div class="ey">Your name, in Bengali</div><h1 class="language" style="font-size:clamp(60px,15vw,110px);margin:12px 0">তুলি</h1><div class="language" style="font-size:36px;color:#ffabc7">তৌহিদা</div><p class="copy" style="margin-top:22px">May you keep blooming with the softness of a tulip and the quiet beauty of a lotus. Happy Birthday, Tuli.</p><button class="btn" id="fire">Let the sky celebrate you ✨</button></div>
+<div class="gardenContent"><div class="tulip">🌷 <span>🪷</span></div><div class="ey">AMAR TULA</div><h1 class="language" style="font-size:clamp(60px,15vw,110px);margin:12px 0">তুলি</h1><div class="language" style="font-size:36px;color:#ffabc7">তৌহিদা</div><p class="copy" style="margin-top:22px">May you keep blooming with the softness of a tulip and the quiet beauty of a lotus. Happy Birthday, Tuli.</p><button class="btn" id="fire">Let the sky celebrate you ✨</button></div>
 <div class="gardenFlowers" id="gardenFlowers"></div></div>
 
 <script>
 const IMAGES=["assets/tuli-photo-1.webp", "assets/tuli-photo-2.webp", "assets/tuli-photo-3.jpg", "assets/tuli-photo-4.jpg", "assets/tuli-photo-5.jpg"];
 const LETTERS=[
 ["Your presence gives me peace.","There is something about simply knowing you are there that settles a part of me. Even from far away, your presence makes the world feel quieter, softer, and more at peace."],
-["Your voice feels like comfort.","Your voice gives me peace, pulls me closer, and sometimes leaves me completely lost in the moment. It is comforting and intoxicating in the sweetest way."],
-["The way you understand and solve things.","The way you understand situations and try to solve things between us is genuinely admirable. You have a sharp understanding, playful mischief, and a beautiful balance of sense and naughtiness that makes you uniquely you."],
+["Your voice feels like comfort.","Your voice gives me peace, pulls me closer, and sometimes leaves me completely lost in the moment. It is comforting and intoxicating{EK NASHA} in the sweetest way."],
+["The way you understand and solve things.","The way you understand situations and try to solve things between us is genuinely admirable. You have a sharp understanding, playful mischief, and a beautiful balance of sense and naughtiness that makes you uniquely you. You know how to make me calm."],
 ["You never stop caring.","No matter what happens between us, you somehow still care. Even when things are difficult, that part of you does not disappear. That kind of care is rare, and I notice it more than I say."],
-["You are beautiful — and beauty lives in you.","You are beautiful, but what makes you truly beautiful is the beauty that seems to live around you too — in your expressions, your mischief, your softness, and your care. Osho might say that real beauty is not merely what the eyes see; it is what radiates when someone is simply, naturally, completely themselves. That is the beauty I see in you. Whoever gets to have that beauty close to them is genuinely fortunate."]
+["You are beautiful and beauty lives in you.","You are beautiful, but what makes you truly beautiful is the beauty that seems to live around you too in your expressions, your mischief, your softness, and your care. SOME might say that real beauty is not merely what the eyes see; it is what radiates when someone is simply, naturally, completely themselves. That is the beauty I see in you. Whoever gets to have that beauty close to them is genuinely fortunate."]
 ];
 
 function rainTulips(){
@@ -226,7 +226,7 @@ document.getElementById("fire").onclick=()=>{
 
 <script id="tuli-intro-message-override">
 (function(){
- const firstMessage = "Happy birthday to youu!! I know your life carries many worries and silent battles, but today I want you to forget every one of them. Let your heart breathe freely, let your soul smile without fear, and let happiness hold you so tightly that even your pain trembles and lets you go. Tonight isn't about the world. It's about you — feeling loved, alive and deeply cherished. ♡";
+ const firstMessage = "Happy birthday to youu!! I know your life carries many worries and silent battles, but today I want you to forget every one of them. Let your heart breathe freely, let your soul smile without fear, and let happiness hold you so tightly that even your pain trembles and lets you go. Tonight isn't about the world. It's about you... feeling loved, alive and deeply cherished. ♡";
  const secondMessage = "I thought of many ways to say this…\n\nBut somehow, words didn't feel enough.\n\nSo I wanted to make something special for you.\n\nBecause you are special.";
  const styleText = `
  #tuli-birthday-intro{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at top,#6a3858,#171323 72%);color:#fff;text-align:center}
