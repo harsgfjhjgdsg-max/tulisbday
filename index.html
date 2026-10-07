@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>For Tuli 🌷</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070711;color:#fff;font-family:Georgia,serif;overflow-x:hidden}button,input{font:inherit}.hidden{display:none!important}
+.screen{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden}.wrap{width:min(92%,850px);margin:auto;position:relative;z-index:5;text-align:center}
+.ey{font:11px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#ffadc9}.title{font-size:clamp(38px,9vw,70px);margin:12px 0}.copy{font:15px/1.8 Arial,sans-serif;color:#dcc9d3;max-width:680px;margin:0 auto}
+.btn{margin-top:24px;padding:14px 25px;border:1px solid #ff79aa;border-radius:999px;background:#1d0a1a;color:#fff;cursor:pointer;box-shadow:0 0 28px #ff4b9444}
+#intro{background:radial-gradient(circle at 50% 40%,#511333,#100712 60%,#05050a)}.tulip{font-size:78px;filter:drop-shadow(0 0 25px #ff4c98);animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-10px)}}
+.tulipPetal{position:fixed;top:-45px;z-index:30;font-size:20px;pointer-events:none;animation:tulipFall linear forwards}@keyframes tulipFall{to{transform:translate3d(var(--dx),112vh,0) rotate(600deg)}}
+
+#arrowScene{background:radial-gradient(circle at 50% 45%,#551536,#100712 68%)}.arena{height:320px;position:relative;margin:10px auto;max-width:760px}
+.bow{position:absolute;left:5%;top:105px;font-size:88px;transform:rotate(-18deg)}.arrow{position:absolute;left:23%;top:142px;font-size:58px;z-index:4;transition:transform .35s ease}
+.heartBalloon{position:absolute;right:7%;top:70px;width:170px;height:155px;transform:rotate(-45deg);background:radial-gradient(circle at 30% 28%,#ffd8e6 0 7%,#ff719f 30%,#9f154f 100%);border-radius:50% 0 50% 50%;box-shadow:0 0 35px #ff4f98;transition:.15s}.heartBalloon:after{content:"";position:absolute;right:-17px;bottom:-22px;width:1px;height:55px;background:#d6a5b9;transform:rotate(45deg)}.heartBalloon:before{content:"";position:absolute;right:-9px;bottom:-3px;border:6px solid transparent;border-top-color:#bd376b;transform:rotate(45deg)}
+.heartBalloon .balloonText{position:absolute;inset:0;display:grid;place-items:center;transform:rotate(45deg);font-size:21px;color:#fff;text-shadow:0 2px 5px #5c0c31}.heartBalloon.hit{animation:heartPop .8s forwards}@keyframes heartPop{0%{transform:rotate(-45deg) scale(1)}35%{transform:rotate(-45deg) scale(1.18)}60%{transform:rotate(-45deg) scale(.92)}100%{transform:rotate(-45deg) scale(0);opacity:0}}
+.aim{width:min(520px,90%);accent-color:#ff72a5}.shooting .arrow{transform:translateX(390px) scale(1.2)}
+
+#cakeScene{background:radial-gradient(circle,#3d1625,#0a070d 72%)}.cakeStage{position:relative;width:min(430px,92vw);margin:10px auto}.cake{font-size:145px;filter:drop-shadow(0 18px 28px #000);position:relative}.cakeWords{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);font-weight:bold;font-size:20px;color:#5b1730;text-shadow:0 1px #fff;width:190px}.knife{position:absolute;left:-18%;top:43%;font-size:56px;transform:rotate(-35deg);z-index:5;opacity:0;pointer-events:none}.cutting .knife{opacity:1;animation:knifeCut 1.25s cubic-bezier(.2,.8,.2,1) forwards}@keyframes knifeCut{0%{left:-18%;transform:rotate(-35deg)}100%{left:72%;transform:rotate(35deg)}}.cake.cut{animation:cakeShake .5s ease}@keyframes cakeShake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+.reveal{opacity:0;transform:translateY(20px);transition:.8s}.revealed .reveal{opacity:1;transform:none}
+
+#photos{padding:90px 18px 120px;max-width:1100px;margin:auto}.rows{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:22px;margin:48px auto 0;align-items:start}.photoRow{min-width:0;display:flex;flex-direction:column;align-items:center;gap:18px;opacity:1;transform:none;pointer-events:auto}.balloonWrap{position:relative;width:165px;height:235px;display:flex;justify-content:center;align-items:flex-start}.balloon{width:155px;height:190px;flex:none;position:relative;cursor:pointer;border-radius:48% 48% 46% 46%;background:#ff6b9c;box-shadow:inset -14px -18px 28px #7d1044aa,inset 12px 10px 20px #fff5,0 18px 34px #0008;transition:transform .22s,filter .22s;overflow:hidden;border:3px solid #ffd9e7}.balloon:after{content:"";position:absolute;left:50%;bottom:-45px;width:2px;height:55px;background:#d7a6ba;z-index:0}.balloon:before{content:"";position:absolute;left:calc(50% - 7px);bottom:-13px;border:7px solid transparent;border-top-color:#c33c70;z-index:4}.balloonPhoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;z-index:1;filter:saturate(1.05);transition:transform .35s,filter .35s}.balloonShade{position:absolute;inset:0;z-index:2;background:linear-gradient(120deg,#fff7 0 8%,transparent 22% 70%,#5b003355 100%);pointer-events:none}.balloonShine{position:absolute;left:24px;top:20px;width:22px;height:48px;border-radius:50%;background:#fff9;transform:rotate(20deg);z-index:3;pointer-events:none}.balloon:hover{transform:translateY(-9px) scale(1.03);filter:brightness(1.08)}.balloon:hover .balloonPhoto{transform:scale(1.06)}
+.photoRow.popping .balloon{animation:balloonPop .7s forwards}@keyframes balloonPop{0%{transform:scale(1)}20%{transform:scale(1.12)}42%{transform:scale(.94)}58%{transform:scale(1.06)}100%{transform:scale(0);opacity:0}}
+.hiddenPhoto{width:190px;height:205px;object-fit:cover;border-radius:22px;border:4px solid #ffd1e0;opacity:0;transform:scale(.2) rotate(-12deg);transition:.65s .18s;box-shadow:0 18px 40px #0008}.photoRow.popping .hiddenPhoto{opacity:1;transform:scale(1) rotate(0)}
+.miniLetter{width:min(100%,390px);background:#fff7fb;color:#291520;border-radius:18px;padding:20px;text-align:left;opacity:0;transform:translateY(25px);transition:.65s .3s;box-shadow:0 15px 35px #0007}.photoRow.popping .miniLetter{opacity:1;transform:none}.miniLetter h3{margin:0 0 9px;font-size:20px}.miniLetter p{font:14px/1.65 Arial,sans-serif;margin:0}.nextHint{font:11px Arial,sans-serif;color:#9a7185;margin-top:10px}
+@media(max-width:950px){.rows{grid-template-columns:repeat(2,minmax(150px,1fr));max-width:720px}.photoRow:last-child{grid-column:1/-1}}
+
+.section{padding:85px 18px;max-width:1000px;margin:auto}.center{text-align:center}.lead{font:16px/1.8 Arial,sans-serif;color:#cdbbc5;max-width:700px;margin:auto}
+
+#garden{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#45142f,#08070d 72%)}.gardenContent{position:relative;z-index:5}.language{font-family:"Noto Sans Bengali","Nirmala UI",sans-serif}.gardenFlowers{position:absolute;left:0;right:0;bottom:0;height:40%;z-index:2}.gardenFlowers span{position:absolute;bottom:3%;font-size:clamp(30px,7vw,62px);animation:sway 3s ease-in-out infinite alternate}@keyframes sway{to{transform:rotate(8deg) translateY(-7px)}}.gardenFire{position:absolute;z-index:4;font-size:48px;animation:boom 1.8s forwards}@keyframes boom{0%{transform:scale(.1);opacity:0}22%{opacity:1}100%{transform:scale(1.9);opacity:0}}
+@media(max-width:650px){.arena{height:290px}.bow{font-size:65px;left:0}.arrow{left:18%;font-size:46px}.heartBalloon{width:125px;height:115px;right:3%;top:80px}.shooting .arrow{transform:translateX(230px) scale(1.1)}.rows{grid-template-columns:1fr;gap:45px}.photoRow:last-child{grid-column:auto}.balloonWrap{width:150px;height:220px}.balloon{width:140px;height:175px}.hiddenPhoto{width:155px;height:170px}.miniLetter{padding:14px;width:min(92vw,390px)}.miniLetter h3{font-size:17px}.miniLetter p{font-size:12px;line-height:1.55}}
+</style>
+
+<style id="tuli-tulip-final-overrides">
+#tuli-tulip-finale {
+  position:relative; min-height:100vh; min-height:100svh; width:100%;
+  display:none; overflow:hidden; isolation:isolate; color:#fff8f4;
+  align-items:center; justify-content:center; text-align:center;
+  padding:clamp(24px,5vw,64px); box-sizing:border-box;
+  background:#23162a;
+}
+#tuli-tulip-finale.is-active {display:flex; animation:tuliFinalFade 1.2s ease both;}
+#tuli-tulip-finale .tuli-bg {
+  position:absolute; inset:0; z-index:-3;
+  background-image:linear-gradient(180deg,rgba(25,14,31,.16),rgba(20,12,25,.45)),url("assets/tulip-field.jpg");
+  background-size:cover; background-position:center 58%;
+  animation:tuliFieldDrift 28s ease-in-out infinite alternate;
+  transform:scale(1.06);
+}
+#tuli-tulip-finale:before {
+  content:""; position:absolute; inset:0; z-index:-2;
+  background:radial-gradient(ellipse at 50% 45%,rgba(255,189,160,.05),rgba(18,13,25,.35) 72%);
+  pointer-events:none;
+}
+#tuli-tulip-finale .tuli-glass {
+  width:min(760px,100%); padding:clamp(25px,5vw,56px);
+  border:1px solid rgba(255,255,255,.38); border-radius:28px;
+  background:rgba(30,20,33,.28); backdrop-filter:blur(7px);
+  box-shadow:0 24px 80px rgba(0,0,0,.2);
+  animation:tuliCardRise 1.6s cubic-bezier(.2,.75,.2,1) both;
+}
+#tuli-tulip-finale .tuli-eyebrow {letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;margin-bottom:18px}
+#tuli-tulip-finale h2 {font-size:clamp(2.5rem,8vw,5.8rem);line-height:1.02;margin:0 0 20px;font-family:Georgia,serif;font-weight:500;text-shadow:0 4px 24px #5a2c3a}
+#tuli-tulip-finale p {font-size:clamp(1rem,2.5vw,1.35rem);line-height:1.7;margin:0 auto 25px;max-width:590px}
+#tuli-tulip-finale .tuli-final-btn {
+  border:1px solid rgba(255,255,255,.85); color:#fff; background:rgba(255,255,255,.16);
+  padding:13px 25px;border-radius:999px;font-size:1rem;cursor:pointer;
+  transition:transform .25s,background .25s;backdrop-filter:blur(8px)
+}
+#tuli-tulip-finale .tuli-final-btn:hover {transform:translateY(-3px);background:rgba(255,255,255,.28)}
+#tuli-tulip-finale .tuli-petal {
+ position:absolute;top:-10vh;width:auto;height:auto;border-radius:0;background:transparent;opacity:.92;font-size:clamp(18px,2.4vw,30px);filter:drop-shadow(0 4px 8px rgba(70,20,35,.28));
+ animation:tuliPetalFall linear infinite;pointer-events:none;
+}
+@keyframes tuliFieldDrift {from{transform:scale(1.06) translate3d(-.5%,0,0)}to{transform:scale(1.18) translate3d(.5%,-1%,0)}}
+@keyframes tuliFinalFade {from{opacity:0}to{opacity:1}}
+@keyframes tuliCardRise {from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes tuliPetalFall {0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:0}10%{opacity:.85}100%{transform:translate3d(70px,115vh,0) rotate(650deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){#tuli-tulip-finale *,#tuli-tulip-finale .tuli-bg{animation:none!important;transition:none!important}}
+#tuliMusic{position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;z-index:-1}
+</style>
+
+</head>
+<body>
+<audio id="tuliMusic" preload="auto" loop playsinline><source src="assets/tuli-music.mp3" type="audio/mpeg"></audio>
+
+
+<div id="intro" class="screen">
+<div class="wrap"><div class="tulip">🌷</div><div class="ey">08 October • made only for you</div><h1 class="title">Tuli</h1><p class="copy">A little birthday world made from flowers, distance, and all the tiny things I love about you.</p><button class="btn" id="enter">Tap to Enter →</button></div>
+</div>
+
+<div id="arrowScene" class="screen hidden">
+<div class="wrap"><div class="ey">A little surprise</div><h2 class="title">Ready?</h2><p class="copy">Aim the arrow at the heart balloon, then shoot it.</p>
+<div class="arena"><div class="bow">🏹</div><div id="arrow" class="arrow">➶</div><div id="heart" class="heartBalloon"><div class="balloonText">For Tuli ❤️</div></div></div>
+<input id="aim" class="aim" type="range" min="0" max="100" value="50"><br><button class="btn" id="shoot">Shoot the arrow →</button></div>
+</div>
+
+<div id="cakeScene" class="screen hidden">
+<div class="wrap"><div class="ey">The heart popped…</div><h2 class="title">Something sweet was hiding here.</h2>
+<div class="cakeStage" id="cakeStage"><div class="cake" id="cake">🎂<div class="cakeWords">Happy Birthday<br>Tuli</div></div><div class="knife" id="knife">🔪</div></div>
+<p class="copy">Slide all the way across to cut the cake.</p><input id="cut" class="aim" type="range" min="0" max="100" value="0">
+<div id="cakeReveal" class="reveal"><h2 class="title">Happy Birthday, Tuli! 🌷</h2><p class="copy">The cake is cut. 🌷 Five balloons are waiting — and each balloon already contains one of your photos.</p><button class="btn" id="goPhotos">See your photo balloons ↓</button></div></div>
+</div>
+
+<section id="photos" class="hidden">
+<div class="center"><div class="ey">One by one</div><h2 class="title">Five little surprises.</h2><p class="lead">Each balloon hides one photo. Pop them in order — the photo and its letter will appear, then the next balloon will come down.</p></div>
+<div class="rows" id="rows"></div>
+</section>
+
+<section class="section"><div class="center"><div class="ey">Our little story</div><h2 class="title">We found each other twice.</h2><p class="lead">We met online, life pulled us apart for a while, and love somehow brought us back. We may not have a together photo yet, but we have a story worth keeping.</p></div></section>
+
+<section class="section"><div class="center"><div class="ey">Your little language</div><h2 class="title">Dhupush. Tush. You.</h2><p class="lead">A fall becomes “dhupush”, a hit becomes “tush”. Your tiny made-up sounds are silly, adorable, and completely yours — and that is exactly why I love them.</p></div></section>
+
+<div id="garden">
+<div class="gardenContent"><div class="tulip">🌷 <span>🪷</span></div><div class="ey">Your name, in Bengali</div><h1 class="language" style="font-size:clamp(60px,15vw,110px);margin:12px 0">তুলি</h1><div class="language" style="font-size:36px;color:#ffabc7">তৌহিদা</div><p class="copy" style="margin-top:22px">May you keep blooming with the softness of a tulip and the quiet beauty of a lotus. Happy Birthday, Tuli.</p><button class="btn" id="fire">Let the sky celebrate you ✨</button></div>
+<div class="gardenFlowers" id="gardenFlowers"></div></div>
+
+<script>
+const IMAGES=["assets/tuli-photo-1.webp", "assets/tuli-photo-2.webp", "assets/tuli-photo-3.jpg", "assets/tuli-photo-4.jpg", "assets/tuli-photo-5.jpg"];
+const LETTERS=[
+["Your presence gives me peace.","There is something about simply knowing you are there that settles a part of me. Even from far away, your presence makes the world feel quieter, softer, and more at peace."],
+["Your voice feels like comfort.","Your voice gives me peace, pulls me closer, and sometimes leaves me completely lost in the moment. It is comforting and intoxicating in the sweetest way."],
+["The way you understand and solve things.","The way you understand situations and try to solve things between us is genuinely admirable. You have a sharp understanding, playful mischief, and a beautiful balance of sense and naughtiness that makes you uniquely you."],
+["You never stop caring.","No matter what happens between us, you somehow still care. Even when things are difficult, that part of you does not disappear. That kind of care is rare, and I notice it more than I say."],
+["You are beautiful — and beauty lives in you.","You are beautiful, but what makes you truly beautiful is the beauty that seems to live around you too — in your expressions, your mischief, your softness, and your care. Osho might say that real beauty is not merely what the eyes see; it is what radiates when someone is simply, naturally, completely themselves. That is the beauty I see in you. Whoever gets to have that beauty close to them is genuinely fortunate."]
+];
+
+function rainTulips(){
+ for(let i=0;i<35;i++){const p=document.createElement("span");p.className="tulipPetal";p.textContent="🌷";p.style.left=Math.random()*100+"vw";p.style.setProperty("--dx",(Math.random()*180-90)+"px");p.style.animationDuration=(5+Math.random()*7)+"s";p.style.animationDelay=(-Math.random()*7)+"s";document.body.appendChild(p);setTimeout(()=>p.remove(),13000)}
+}
+document.getElementById("enter").onclick=()=>{document.getElementById("intro").classList.add("hidden");document.getElementById("arrowScene").classList.remove("hidden");rainTulips()};
+
+const aim=document.getElementById("aim"),arrow=document.getElementById("arrow");
+aim.oninput=()=>{let v=+aim.value;arrow.style.transform=`translateX(${(v-50)*2.5}px) rotate(${(v-50)/6}deg)`};
+
+document.getElementById("shoot").onclick=()=>{
+ const scene=document.getElementById("arrowScene");
+ scene.classList.add("shooting");
+ setTimeout(()=>document.getElementById("heart").classList.add("hit"),850);
+ setTimeout(()=>{scene.classList.add("hidden");document.getElementById("cakeScene").classList.remove("hidden")},1700);
+};
+
+const cut=document.getElementById("cut"),cakeStage=document.getElementById("cakeStage");
+cut.oninput=()=>{
+ if(+cut.value>=95 && !cakeStage.classList.contains("cutting")){
+  cakeStage.classList.add("cutting");
+  setTimeout(()=>{document.getElementById("cake").classList.add("cut");cakeStage.classList.add("cut")},1150);
+  setTimeout(()=>document.getElementById("cakeScene").classList.add("revealed"),1450);
+ }
+};
+
+document.getElementById("goPhotos").onclick=()=>{
+ document.getElementById("cakeScene").classList.add("hidden");
+ const p=document.getElementById("photos");p.classList.remove("hidden");p.scrollIntoView({behavior:"smooth"});
+};
+
+const rows=document.getElementById("rows");
+IMAGES.forEach((src,i)=>{
+ const row=document.createElement("div");row.className="photoRow";
+ row.innerHTML=`<div class="balloonWrap"><button class="balloon" type="button" aria-label="Pop Tuli photo balloon ${i+1}"><img class="balloonPhoto" src="${src}" alt="Tuli photo ${i+1}"><span class="balloonShade"></span><span class="balloonShine"></span></button></div><img class="hiddenPhoto" src="${src}" alt="Tuli photo ${i+1}"><div class="miniLetter"><h3>${LETTERS[i][0]}</h3><p>${LETTERS[i][1]}</p><div class="nextHint">${i<4?"Pop the next photo balloon ↑":"You found all five. 🌷"}</div></div>`;
+ rows.appendChild(row);
+});
+const rowEls=[...rows.children];
+rowEls.forEach((row,i)=>{
+ row.querySelector(".balloon").onclick=()=>{
+  if(row.classList.contains("popping"))return;
+  row.classList.add("popping");
+  setTimeout(()=>{if(rowEls[i+1])rowEls[i+1].scrollIntoView({behavior:"smooth",block:"center"})},850);
+ };
+});
+
+const gf=document.getElementById("gardenFlowers");
+for(let i=0;i<30;i++){const s=document.createElement("span");s.textContent=i%5===0?"🪷":"🌷";s.style.left=(i/30*100+Math.random()*2)+"%";s.style.animationDelay=Math.random()*2+"s";gf.appendChild(s)}
+
+document.getElementById("fire").onclick=()=>{
+ for(let i=0;i<28;i++){const f=document.createElement("div");f.className="gardenFire";f.textContent=["🎆","✨","💗","🌷","🪷"][i%5];f.style.left=(4+Math.random()*92)+"%";f.style.top=(5+Math.random()*50)+"%";f.style.animationDelay=(Math.random()*1.4)+"s";document.getElementById("garden").appendChild(f);setTimeout(()=>f.remove(),3500)}
+};
+</script>
+
+<section id="tuli-tulip-finale" aria-label="Tuli's tulip field birthday finale">
+  <div class="tuli-bg" aria-hidden="true"></div>
+  <div class="tuli-glass">
+    <div class="tuli-eyebrow">A little place just for you</div>
+    <h2>Happy Birthday,<br>Tuli ♡</h2>
+    <p>May life be gentle with your heart, may your worries grow lighter, and may you always find reasons to smile. You deserve all the beautiful things this world can give.</p>
+    <button class="tuli-final-btn" id="tuli-finale-again" type="button">Make a wish ✨</button>
+  </div>
+</section>
+<script id="tuli-tulip-finale-script">
+(function(){
+  const finale=document.getElementById('tuli-tulip-finale');
+  if(!finale) return;
+  for(let i=0;i<24;i++){
+    const petal=document.createElement('i');
+    petal.className='tuli-petal';
+    petal.textContent='🌷';
+    petal.style.left=(Math.random()*100)+'%';
+    petal.style.animationDuration=(8+Math.random()*10)+'s';
+    petal.style.animationDelay=(-Math.random()*15)+'s';
+    petal.style.opacity=(.35+Math.random()*.55);
+    finale.appendChild(petal);
+  }
+  // Add a discreet launcher so the finale is accessible even if an older flow uses a different final-section ID.
+  function showFinale(){ finale.classList.add('is-active'); finale.scrollIntoView({behavior:'smooth',block:'start'}); }
+  document.getElementById('tuli-finale-again').addEventListener('click',function(){
+    this.textContent='Your wish is on its way ♡';
+    for(const p of finale.querySelectorAll('.tuli-petal')){
+      p.style.animationDuration=(3+Math.random()*4)+'s';
+      p.style.background='linear-gradient(135deg,#fff4cf,#ff9bb2)';
+    }
+  });
+  window.showTuliTulipFinale=showFinale;
+  // Use the page's existing final/end buttons as triggers where possible.
+  const candidates=Array.from(document.querySelectorAll('button,a,[role="button"]'));
+  candidates.forEach(el=>{
+    const t=(el.innerText||el.textContent||'').trim().toLowerCase();
+    if(/finish|final|celebrate|birthday wish|one last|surprise/.test(t)){
+      el.addEventListener('click',function(){setTimeout(showFinale,350);},{once:true});
+    }
+  });
+})();
+</script>
+
+
+<script id="tuli-intro-message-override">
+(function(){
+ const firstMessage = "Happy birthday to youu!! I know your life carries many worries and silent battles, but today I want you to forget every one of them. Let your heart breathe freely, let your soul smile without fear, and let happiness hold you so tightly that even your pain trembles and lets you go. Tonight isn't about the world. It's about you — feeling loved, alive and deeply cherished. ♡";
+ const secondMessage = "I thought of many ways to say this…\n\nBut somehow, words didn't feel enough.\n\nSo I wanted to make something special for you.\n\nBecause you are special.";
+ const styleText = `
+ #tuli-birthday-intro{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at top,#6a3858,#171323 72%);color:#fff;text-align:center}
+ #tuli-birthday-intro.show{display:flex}
+ #tuli-birthday-intro .intro-card{max-width:820px;width:100%;padding:clamp(25px,5vw,54px);border:1px solid #ffffff45;border-radius:28px;background:#ffffff0d;box-shadow:0 25px 90px #0005;backdrop-filter:blur(8px)}
+ #tuli-birthday-intro h1{font:500 clamp(2.4rem,7vw,5rem)/1.08 Georgia,serif;margin:0 0 24px;color:#ffe0e8;text-shadow:0 4px 30px #ff6b9c33}
+ #tuli-birthday-intro p{font:clamp(1rem,2.2vw,1.3rem)/1.85 Georgia,serif;white-space:pre-wrap;margin:0 auto 28px;max-width:720px;min-height:8em;color:#fffafc}
+ #tuli-birthday-intro button{padding:13px 30px;border:1px solid #fff9;border-radius:999px;color:white;background:#ffffff1c;font-size:1rem;cursor:pointer;transition:.25s;box-shadow:0 8px 30px #0003}
+ #tuli-birthday-intro button:hover{transform:translateY(-2px);background:#ffffff2c}
+ #tuli-birthday-intro button:disabled{opacity:.45;cursor:wait;transform:none}
+ #tuli-birthday-intro .step{font:12px/1.4 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#ffc5d8;margin-bottom:18px;opacity:.8}
+ `;
+ const st=document.createElement('style');st.textContent=styleText;document.head.appendChild(st);
+ const overlay=document.createElement('section');overlay.id='tuli-birthday-intro';
+ overlay.innerHTML='<div class="intro-card"><div class="step" id="tuli-intro-step">A little message for you</div><h1 id="tuli-intro-title">Happy birthday to youu!! ♡</h1><p id="tuli-intro-typed"></p><button id="tuli-intro-next" disabled>Next →</button></div>';
+ document.body.appendChild(overlay);
+ const p=overlay.querySelector('#tuli-intro-typed'), btn=overlay.querySelector('#tuli-intro-next');
+ const title=overlay.querySelector('#tuli-intro-title'), step=overlay.querySelector('#tuli-intro-step');
+ let timer=null, shown=false, entryControl=null, stage=1, bypassEntry=false;
+ function typeText(text,done){
+   clearInterval(timer);p.textContent='';btn.disabled=true;let i=0;
+   timer=setInterval(()=>{p.textContent+=text.charAt(i++);if(i>=text.length){clearInterval(timer);btn.disabled=false;if(done)done()}},24);
+ }
+ function showFirst(){
+   stage=1;step.textContent='A little message for you';title.textContent='Happy birthday to youu!! ♡';btn.textContent='Next →';typeText(firstMessage);
+ }
+ function showSecond(){
+   stage=2;step.textContent='Just for you';title.textContent='I thought of many ways…';btn.textContent='Continue →';typeText(secondMessage);
+ }
+ btn.addEventListener('click',()=>{
+   if(btn.disabled)return;
+   if(stage===1){showSecond();return;}
+   overlay.classList.remove('show');shown=false;
+   if(entryControl){bypassEntry=true;entryControl.click();entryControl=null;}
+ });
+ const clickable=Array.from(document.querySelectorAll('button,a,[role="button"]'));
+ clickable.forEach(el=>{
+   if(el===btn)return;
+   const label=(el.innerText||el.textContent||'').trim().toLowerCase();
+   if(label.includes('tap to enter')){
+     el.addEventListener('click',function(ev){
+       if(bypassEntry){bypassEntry=false;return;}
+       if(shown)return;
+       entryControl=el;ev.preventDefault();ev.stopImmediatePropagation();shown=true;overlay.classList.add('show');showFirst();
+       const music=document.getElementById('tuliMusic');
+       if(music){music.volume=.72;const play=music.play();if(play&&play.catch)play.catch(()=>{});}
+     },true);
+   }
+ });
+})();
+</script>
+
+
+<script id="tuli-music-script">
+(function(){
+  const music=document.getElementById('tuliMusic');
+  if(!music) return;
+  music.volume=0.72;
+  function startMusic(){
+    const p=music.play();
+    if(p && p.catch) p.catch(()=>{});
+  }
+  document.addEventListener('click',function(e){
+    const el=e.target.closest && e.target.closest('button,a,[role="button"]');
+    if(!el) return;
+    const label=(el.innerText||el.textContent||'').trim().toLowerCase();
+    if(label.includes('tap to enter')) startMusic();
+  },true);
+})();
+</script>
+</body>
+</html>
